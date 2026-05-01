@@ -1,34 +1,37 @@
 # Makakoo OS Homebrew formula
 #
-# Pinned to v0.1.3 — upgrade verb + Kimi adapter (2026-05-02). Update
-# version + sha256 lines at each release. SHAs come from
+# Pinned to v0.1.4 — Homebrew Cellar-path detection fix for `makakoo
+# upgrade` + docs sweep (2026-05-02). v0.1.3 was the first release
+# containing the upgrade verb but classified brew installs as Unknown
+# on every invocation; v0.1.4 fixes that. Update version + sha256 lines
+# at each release. SHAs come from
 #   gh release download <tag> --pattern '*.sha256' --output -
 # in the makakoo/makakoo-os repo.
 class Makakoo < Formula
   desc "Makakoo OS — autonomous cognitive extension for any AI CLI"
   homepage "https://makakoo.com"
-  version "0.1.3"
+  version "0.1.4"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/makakoo/makakoo-os/releases/download/v#{version}/makakoo-aarch64-apple-darwin.tar.gz"
-      sha256 "191d985293a92311a6db13fef4ebe5fb01d5b7598c96a41861cbb50d258d72fe"
+      sha256 "36fba0058c7d754d3a5b8db92158c111df86a43c6e5be1f7af5e627d95faf9d2"
     end
     on_intel do
       url "https://github.com/makakoo/makakoo-os/releases/download/v#{version}/makakoo-x86_64-apple-darwin.tar.gz"
-      sha256 "fcdbcd2f86c591d3e5fc8df73c8790dbfb9c631bfa9bc3fbaef34c28a3c2d20a"
+      sha256 "1d9d9ca3146cd170de6acea9d55ab34d1af1142a6cff987e8de6f4a170516a51"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/makakoo/makakoo-os/releases/download/v#{version}/makakoo-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "af8fdd8562bbe7eccd052f8c8b712f5e0b63913938ec68c9b0cead0e5be8787c"
+      sha256 "71053193462a41e90f1b3a5935e96a22b3f93b9ee324eca4a4fa1260ffb2802b"
     end
     on_arm do
       url "https://github.com/makakoo/makakoo-os/releases/download/v#{version}/makakoo-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "fe15a60b4393e4bd57517abc035d7b03f5b18d5d406092a237805d76cc3cd2cc"
+      sha256 "e622a962247eb9ec6666929e8fe04e84cb69c9de2bcaea173183525da5ed5cc2"
     end
   end
 
@@ -43,6 +46,6 @@ class Makakoo < Formula
   end
 
   test do
-    assert_match "makakoo 0.1.3", shell_output("#{bin}/makakoo --version")
+    assert_match "makakoo 0.1.4", shell_output("#{bin}/makakoo --version")
   end
 end
