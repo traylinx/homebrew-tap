@@ -1,34 +1,34 @@
 # Makakoo OS Homebrew formula
 #
-# Pinned to v0.1.2 — first version-bumped release (2026-05-01). Update
+# Pinned to v0.1.3 — upgrade verb + Kimi adapter (2026-05-02). Update
 # version + sha256 lines at each release. SHAs come from
 #   gh release download <tag> --pattern '*.sha256' --output -
 # in the makakoo/makakoo-os repo.
 class Makakoo < Formula
   desc "Makakoo OS — autonomous cognitive extension for any AI CLI"
   homepage "https://makakoo.com"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/makakoo/makakoo-os/releases/download/v#{version}/makakoo-aarch64-apple-darwin.tar.gz"
-      sha256 "986010b9014f8819d541421e3f0df69c984b4fb90051235b1e7183d8045d6dd2"
+      sha256 "191d985293a92311a6db13fef4ebe5fb01d5b7598c96a41861cbb50d258d72fe"
     end
     on_intel do
       url "https://github.com/makakoo/makakoo-os/releases/download/v#{version}/makakoo-x86_64-apple-darwin.tar.gz"
-      sha256 "1305db231ecca38f83db171602e4358b82c70162c5550185e6663bfe890b0178"
+      sha256 "fcdbcd2f86c591d3e5fc8df73c8790dbfb9c631bfa9bc3fbaef34c28a3c2d20a"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/makakoo/makakoo-os/releases/download/v#{version}/makakoo-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "6914d6c2d54f8290e77d84e3438dfce0507869686f06463d3409b69f833ccf85"
+      sha256 "af8fdd8562bbe7eccd052f8c8b712f5e0b63913938ec68c9b0cead0e5be8787c"
     end
     on_arm do
       url "https://github.com/makakoo/makakoo-os/releases/download/v#{version}/makakoo-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "380b93387bb6b45e582b43d910312bafd1aa594b3c8535e19ea4f8338f08422c"
+      sha256 "fe15a60b4393e4bd57517abc035d7b03f5b18d5d406092a237805d76cc3cd2cc"
     end
   end
 
@@ -43,6 +43,6 @@ class Makakoo < Formula
   end
 
   test do
-    assert_match "makakoo 0.1.2", shell_output("#{bin}/makakoo --version")
+    assert_match "makakoo 0.1.3", shell_output("#{bin}/makakoo --version")
   end
 end
