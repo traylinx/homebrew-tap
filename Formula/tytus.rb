@@ -17,28 +17,28 @@
 class Tytus < Formula
   desc "Private AI pod CLI — connect any terminal to your isolated LLM gateway"
   homepage "https://get.traylinx.com"
-  version "0.7.77"
+  version "0.7.78"
   license "MIT"
 
   on_macos do
     on_arm do
       url "https://github.com/traylinx/tytus-cli/releases/download/v#{version}/tytus-macos-aarch64.tar.gz"
-      sha256 "8093eef5ca7bd03c0aff8c9b0ba97c40a8e16a2c062f1104d811caf42f020ba0"
+      sha256 "06c5190ee0c7cc11bbd14b2587e6f54326b113113a1009c2d1f2c79a8a99cd19"
     end
     on_intel do
       url "https://github.com/traylinx/tytus-cli/releases/download/v#{version}/tytus-macos-x86_64.tar.gz"
-      sha256 "c1d5e1a696832cb95e030e210ac935184a80e76e967a62312b9ee8b3b04f11e8"
+      sha256 "bd0741ec46ebb7e858deb74eeed286252ee6894c43d5edc240e86327757c9f70"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/traylinx/tytus-cli/releases/download/v#{version}/tytus-linux-aarch64.tar.gz"
-      sha256 "fb5d6ab3e0791659db6bec9cf2b33c2a18a5195f69431ca87b0ac2650dd905f9"
+      sha256 "a8ce9edc864494c3b807b482571ecb9c40f4800163c6deb12e9f7c379022eafa"
     end
     on_intel do
       url "https://github.com/traylinx/tytus-cli/releases/download/v#{version}/tytus-linux-x86_64.tar.gz"
-      sha256 "b355c872a7c10049b96ab8cb2dd3d6375f0e7728c1fb5aba72a073e19e9b6aab"
+      sha256 "cde8b076c64f8964b34363e14de8ac285c14d32713ecb9d08e596f6c2fbc3cff"
     end
   end
 
